@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+
+<div class="jumbotron">
+    <h1 class="text-center">Usuarios</h1>
+
+    <a class="btn btn-lg btn-outline-success" href="/usuarios/novo">Novo Usuario</a> 
+    <br>
+    <br>
+            <% users.forEach(function(user){ %>
+                    <div class="row">
+                    <div class="col-10"><h3><%=user.username%></h3></div>
+                    <div class="col-2">     
+                    <form id="delete" action="/usuarios/<%= user._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-lg btn-outline-danger">Deletar</button>
+                    </form></div>
+                </div><br>
+            <% }) %>
+    </div>
+  
+</div>
+
+<% include ./partials/footer %>

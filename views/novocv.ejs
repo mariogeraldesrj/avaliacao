@@ -1,0 +1,113 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    <div class="h1 text-center text-success">Novo Curriculo</div>
+    <form action="/curriculos" method="POST">
+        <div class="row col-12">
+            <h3>Dados Pessoais</h3>
+        </div>
+        <div class="row">
+            <div class="col-12">            
+            <label for="nome">Nome Completo</label>
+            <input class="form-control" id="nome" type="text" name="nome" placeholder="Nome" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            <label>Nacionalidade</label>
+            <input class="form-control" type="text" name="nacionalidade" placeholder="Nacionalidade" required>
+            </div>
+            <div class="col-4">
+            <label>Estado Civil</label>
+            <select class="form-control"  name="estadocivil" required>
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            </select>
+            </div>
+            <div class="col-4">
+            <label>Idade</label>
+            <input class="form-control"  type="number" name="idade" min="18" max="100" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+            <label>Endereço</label>
+            <input class="form-control"  type="text" name="endereco" placeholder="Endereço" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            <label>Bairro</label>
+            <input class="form-control"  type="text" name="bairro" placeholder="Bairro" required>
+            </div>
+            <div class="col-4">
+            <label>Cidade</label>
+            <input class="form-control"  type="text" name="cidade" placeholder="Cidade"required>
+            </div>
+            <div class="col-4">
+            <label>Estado</label>
+            <input class="form-control"  type="text" name="estado" placeholder="Estado" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+            <label>Telefone</label>
+            <input class="form-control"  type="tel" name="telefone" placeholder="(XX)XXXX-XXXX" pattern="[\(]\d{2}[\)]\d{4}[\-]\d{4}" size="13" required>
+            </div>       
+            <div class="col-6">
+            <label>Celular</label>
+            <input class="form-control"  type="tel" name="celular"  placeholder="(XX)XXXXX-XXXX" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" size="14" required>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-12">
+            <label>E-mail</label>
+            <input class="form-control"  type="email" name="email" placeholder="E-mail" required>
+            </div>
+        </div>
+        <div class="row col-12">
+            <label class="h3">Objetivo</label>
+            <input class="form-control"  type="text" name="objetivo" placeholder="Objetivo" required>
+        </div>
+        <div class="row">
+            <h3 class="col-12">Formação</h3>
+        </div>
+        <div class="row">
+            <div class="col-5">
+            <label>Nome do Curso</label>
+            <input class="form-control"  type="text" name="formacao" placeholder="Formação" required>
+            </div>
+            <div class="col-5">
+            <label>Universidade</label>
+            <input class="form-control"  type="text" name="universidade" placeholder="Universidade" required>
+            </div>
+            <div class="col-2">
+            <label>Ano de Conclusão</label>
+            <input class="form-control"  type="number" name="formacaofim" placeholder="XXXX" min="1900" max="2020" required>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-12 h3">Idiomas</label>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            <input type="checkbox" name="idioma" value="portugues" checked>Português<br>
+            </div>
+            <div class="col-4">
+            <input type="checkbox" name="idioma" value="ingles">Inglês<br>
+            </div>
+            <div class="col-4">
+               <input type="checkbox" name="idioma" value="espanhol">Espanhol<br>   
+            </div>
+        </div>
+        <div class="row col-12">
+            <label class="h3">Experiencia Profissional</label>
+            <textarea class="form-control" rows="10" type="text" name="experiencia" placeholder="Experiencia" required></textarea>
+        </div>
+        <br>
+        <div class="row col-12">
+        <input class="btn btn-lg btn-outline-success" type="submit">
+        </div>
+    </form>
+</div>
+<% include ./partials/footer %>
+

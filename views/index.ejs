@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="jumbotron">
+   <h1 class="text-center">Todos Curriculos</h1>
+   
+            <a class="btn btn-lg btn-outline-success" href="/curriculos/novo">Novo CV</a>   
+            <br>
+            <br>
+            <% curriculos.forEach(function(curriculo){ %>
+                <div class="row">
+                    <div class="col-9">
+                         <h3><%=curriculo.nome%></h3>
+                         </div>
+                         <div class="col-3">
+                          <div class="extra">
+                             <a class="btn btn-lg btn-outline-info" href="/curriculos/<%= curriculo._id %>">
+                                 Visualizar CV
+                                 <i class="right chevron icon"></i>
+                             </a>
+                         </div>
+                         </div>
+                        
+                    </div>
+               <br>
+            <% }) %>
+ 
+         </div>
+</div>
+
+<% include ./partials/footer %>

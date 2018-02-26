@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    <div class="h1">Login</div>
+<form action="/login" method="POST">
+    <div class="field">
+    <label>Login</label>    
+    <input class="form-control" type="text" name="username" placeholder="Usuario">
+    </div>
+    <div class="field">
+    <label>Senha</label>
+    <input class="form-control" type="password" name="password" placeholder="Senha">
+    </div>
+    <br>
+    <input class="btn btn-lg btn-outline-success" type="submit">
+</form>
+</div>
+<% include ./partials/footer %>

@@ -1,0 +1,92 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    <div class="h1 text-center text-info">Editar Curriculo</div>
+     <form action="/curriculos/<%= curriculos._id %>?_method=PUT" method="POST">
+        <div class="row col-12">
+            <h3>Dados Pessoais</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-12">            
+            <label for="nome">Nome Completo</label>
+            <input class="form-control" id="nome" type="text" name="curriculos[nome]" value="<%= curriculos.nome %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5">
+            <label>Nacionalidade</label>
+            <input class="form-control" type="text" name="curriculos[nacionalidade]" value="<%= curriculos.nacionalidade %>">
+            </div>
+            <div class="col-5">
+            <label>Estado Civil</label>
+            <select class="form-control"  name="curriculos[estadocivil]">
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            </select>
+            </div>
+            <div class="col-2">
+            <label>Idade</label>
+            <input class="form-control"  type="number" name="curriculos[idade]" min="18" max="100" value="<%= curriculos.idade %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+            <label>Endereço</label>
+            <input class="form-control" type="text" name="curriculos[endereco]" value="<%= curriculos.endereco %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            <label>Bairro</label>
+            <input class="form-control" type="text" name="curriculos[bairro]" value="<%= curriculos.bairro %>">
+            </div>
+            <div class="col-4">
+            <label>Cidade</label>
+            <input class="form-control" type="text" name="curriculos[cidade]" value="<%= curriculos.cidade %>">
+            </div>
+            <div class="col-4">
+            <label>Estado</label>
+            <input class="form-control" type="text" name="curriculos[estado]" value="<%= curriculos.estado %>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+            <label>Telefone</label>
+            <input class="form-control" type="tel" name="curriculos[telefone]"value="<%= curriculos.telefone %>" pattern="[\(]\d{2}[\)]\d{4}[\-]\d{4}" size="13">
+            </div>       
+            <div class="col-6">
+            <label>Celular</label>
+            <input class="form-control"  type="tel" name="curriculos[celular]"  value="<%= curriculos.celular %>" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" size="14">
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-12">
+            <label>E-mail</label>
+            <input class="form-control"  type="email" name="curriculos[email]" value="<%= curriculos.email %>">
+            </div>
+        </div>
+        <div class="row col-12">
+            <label class="h3">Objetivo</label>
+            <input class="form-control"  type="text" name="curriculos[objetivo]" value="<%= curriculos.objetivo %>">
+        </div>
+        <div class="row col-12">
+            <label class="h3">Formação</label>
+            <input class="form-control"  type="text" name="curriculos[formacao]" value="<%= curriculos.formacao %>">
+        </div>
+        <div class="row col-12">
+            <label class="h3">Idiomas</label>
+            <input class="form-control"  type="text" name="curriculos[idioma]" value="<%= curriculos.idioma %>">
+        </div>
+        <div class="row col-12">
+            <label class="h3">Experiencia Profissional</label>
+            <input class="form-control" rows="3" type="textarea" name="curriculos[experiencia]" value="<%= curriculos.experiencia %>">
+        
+        </div>
+        <br>
+        <div class="row col-12">
+        <button class="btn btn-outline-warning" type="submit">Editar</button>
+        </div>
+    </form>
+</div>
+<% include ./partials/footer %>
+

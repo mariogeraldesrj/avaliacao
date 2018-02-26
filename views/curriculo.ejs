@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    
+    <div class="container ">
+        <div class="h1 text-info"><%= curriculos.nome %></div>
+        <div class="item">
+            <h3>Dados Pessoais</h3>
+            <div><%= curriculos.nacionalidade %>, <%- curriculos.estadocivil %>, <%= curriculos.idade %> anos </div>
+            <div><%= curriculos.endereco %></div>
+            <div><%= curriculos.bairro %> - <%= curriculos.cidade %> - <%= curriculos.estado %></div>
+            <div>Telefone: <%= curriculos.telefone %></div>
+            <div>Celular: <%= curriculos.celular %></div>
+            <div>E-mail: <%= curriculos.email %></div>
+            <br>
+            </div>
+            <div class="item">
+            <h3>Objetivo</h3>
+            <div><%= curriculos.objetivo %></div>
+            <br>
+            </div>
+            <div class="item">
+            <h3>Formação</h3>
+            <div><%= curriculos.formacao %> no(a) <%= curriculos.universidade %> em <%= curriculos.formacaofim %> </div>
+            <br>
+            </div>
+            <div class="item">
+            <h3>Idiomas</h3>
+            <div><%= curriculos.idioma %></div>
+            <br>
+            </div>
+            <div class="item">
+            <h3>Experiencia Profissional</h3>
+            <div><%= curriculos.experiencia %></div>
+            <br>
+            </div>
+            <div class="description">
+                <p></p>
+            <a class="btn btn-outline-warning" href="/curriculos/<%= curriculos._id %>/edit">Editar</a>
+            <form id="delete" action="/curriculos/<%= curriculos._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-outline-danger">Apagar</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+<% include ./partials/footer %>
+
